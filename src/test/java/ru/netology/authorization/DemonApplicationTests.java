@@ -12,15 +12,15 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+@Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class DemonApplicationTests {
     @Autowired
     TestRestTemplate restTemplate;
 
-
     private static GenericContainer<?> devapp = new GenericContainer<>("devapp")
             .withExposedPorts(8080);
-    @Container
+
     private static GenericContainer<?> prodapp = new GenericContainer<>("prodapp")
             .withExposedPorts(8080);
 
